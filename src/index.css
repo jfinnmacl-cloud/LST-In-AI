@@ -1,0 +1,326 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html {
+  scroll-behavior: smooth;
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  margin: 0;
+  background:
+    linear-gradient(180deg, rgba(8, 47, 73, 0.22), rgba(7, 7, 10, 0) 34rem),
+    radial-gradient(circle at 20% 80%, rgba(120, 40, 200, 0.08), transparent 40rem),
+    radial-gradient(circle at 80% 20%, rgba(20, 184, 166, 0.06), transparent 35rem),
+    #07070a;
+  color: #f4f4f5;
+  font-family: 'Inter', ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+  overflow-x: hidden;
+}
+
+::selection {
+  background: rgba(139, 92, 246, 0.3);
+  color: #fff;
+}
+
+/* Mobile-first touch optimizations */
+button, a, input, textarea, select {
+  min-height: 44px;
+  touch-action: manipulation;
+}
+
+button, input, textarea, select {
+  font: inherit;
+}
+
+/* Prevent iOS zoom on focus */
+@media (max-width: 768px) {
+  input[type="text"],
+  input[type="email"],
+  textarea,
+  select {
+    font-size: 16px !important;
+  }
+}
+
+button:focus-visible, input:focus-visible, textarea:focus-visible, select:focus-visible {
+  outline: 2px solid #67e8f9;
+  outline-offset: 3px;
+}
+
+/* Eerie Ambient Effects - Desktop Only */
+@media (min-width: 769px) {
+  @keyframes pulse-glow {
+    0%, 100% { opacity: 0.4; filter: blur(0px); }
+    50% { opacity: 0.8; filter: blur(1px); }
+  }
+
+  @keyframes float {
+    0%, 100% { transform: translate(0, 0) scale(1); }
+    25% { transform: translate(5px, -10px) scale(1.02); }
+    50% { transform: translate(-3px, 5px) scale(0.98); }
+    75% { transform: translate(7px, 7px) scale(1.01); }
+  }
+
+  @keyframes flicker {
+    0%, 100% { opacity: 1; }
+    92% { opacity: 1; }
+    93% { opacity: 0.6; }
+    94% { opacity: 1; }
+    96% { opacity: 0.7; }
+    97% { opacity: 1; }
+  }
+
+  @keyframes glitch {
+    0%, 100% { transform: translate(0); filter: none; }
+    92.5% { transform: translate(0); filter: none; }
+    93% { transform: translate(-2px, 1px); filter: hue-rotate(90deg); }
+    93.5% { transform: translate(2px, -1px); filter: hue-rotate(-90deg); }
+    94% { transform: translate(0); filter: none; }
+    94.5% { transform: translate(-1px, 0); filter: hue-rotate(45deg); }
+    95% { transform: translate(0); filter: none; }
+  }
+
+  @keyframes scanline {
+    0% { transform: translateY(-100%); }
+    100% { transform: translateY(100vh); }
+  }
+
+  @keyframes breath {
+    0%, 100% { transform: scale(1); opacity: 0.15; }
+    50% { transform: scale(1.1); opacity: 0.25; }
+  }
+
+  @keyframes shadow-dance {
+    0%, 100% { box-shadow: 0 0 40px rgba(139, 92, 246, 0.08), 0 0 80px rgba(139, 92, 246, 0.04); }
+    33% { box-shadow: 0 0 50px rgba(139, 92, 246, 0.12), 0 0 100px rgba(6, 182, 212, 0.06); }
+    66% { box-shadow: 0 0 60px rgba(6, 182, 212, 0.1), 0 0 90px rgba(139, 92, 246, 0.05); }
+  }
+
+  @keyframes text-glitch {
+    0%, 100% { text-shadow: 0 0 0 transparent; }
+    92% { text-shadow: 0 0 0 transparent; }
+    93% { text-shadow: -2px 0 rgba(139, 92, 246, 0.5), 2px 0 rgba(6, 182, 212, 0.5); }
+    94% { text-shadow: 0 0 0 transparent; }
+    96% { text-shadow: 2px 0 rgba(139, 92, 246, 0.3), -2px 0 rgba(6, 182, 212, 0.3); }
+    97% { text-shadow: 0 0 0 transparent; }
+  }
+
+  @keyframes hypnotic {
+    0%, 100% { transform: scale(1); box-shadow: 0 0 20px rgba(139, 92, 246, 0.1); }
+    50% { transform: scale(1.02); box-shadow: 0 0 40px rgba(139, 92, 246, 0.2); }
+  }
+
+  .eerie-overlay {
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    z-index: 1;
+    background:
+      radial-gradient(ellipse at 20% 50%, rgba(139, 92, 246, 0.03), transparent 60%),
+      radial-gradient(ellipse at 80% 50%, rgba(6, 182, 212, 0.02), transparent 60%);
+  }
+
+  .eerier-overlay::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: repeating-linear-gradient(
+      0deg,
+      transparent,
+      transparent 2px,
+      rgba(0, 0, 0, 0.03) 2px,
+      rgba(0, 0, 0, 0.03) 4px
+    );
+    pointer-events: none;
+    animation: breath 8s ease-in-out infinite;
+  }
+
+  .eerie-shadow {
+    animation: shadow-dance 6s ease-in-out infinite;
+  }
+
+  .flicker {
+    animation: flicker 8s infinite;
+  }
+
+  .float-slow {
+    animation: float 20s ease-in-out infinite;
+  }
+
+  .glitch {
+    animation: glitch 10s infinite;
+  }
+
+  .text-glitch {
+    animation: text-glitch 12s infinite;
+  }
+
+  .hypnotic {
+    animation: hypnotic 4s ease-in-out infinite;
+  }
+
+  .scanline::after {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 2px;
+    background: linear-gradient(90deg, transparent, rgba(139, 92, 246, 0.1), transparent);
+    animation: scanline 8s linear infinite;
+    pointer-events: none;
+    z-index: 9999;
+  }
+
+  body::before {
+    content: '';
+    position: fixed;
+    inset: 0;
+    background: radial-gradient(
+      600px circle at var(--mouse-x, 50%) var(--mouse-y, 50%),
+      rgba(139, 92, 246, 0.04),
+      transparent 40%
+    );
+    pointer-events: none;
+    z-index: 0;
+    transition: background 0.3s ease;
+  }
+}
+
+/* Mobile: Reduce animations for performance */
+@media (max-width: 768px) {
+  .flicker, .glitch, .text-glitch {
+    animation: none !important;
+  }
+  
+  .scanline::after {
+    animation: scanline 12s linear infinite;
+  }
+
+  .float-slow {
+    animation: none;
+  }
+
+  .hypnotic {
+    animation: none;
+  }
+}
+
+/* Respect user preference for reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+  
+  html {
+    scroll-behavior: auto;
+  }
+}
+
+button:hover, a:hover {
+  box-shadow: 0 0 20px rgba(139, 92, 246, 0.15);
+}
+
+/* Mobile optimizations */
+@media (max-width: 768px) {
+  body {
+    font-size: 15px;
+  }
+}
+
+/* Custom scrollbar - Desktop only */
+@media (min-width: 769px) {
+  ::-webkit-scrollbar {
+    width: 8px;
+  }
+
+  ::-webkit-scrollbar-track {
+    background: #07070a;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: rgba(139, 92, 246, 0.3);
+    border-radius: 4px;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    background: rgba(139, 92, 246, 0.5);
+  }
+}
+
+/* Eerie particle effect - Desktop only */
+@media (min-width: 769px) {
+  .particles {
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    z-index: 0;
+    overflow: hidden;
+  }
+
+  .particle {
+    position: absolute;
+    width: 2px;
+    height: 2px;
+    background: rgba(139, 92, 246, 0.3);
+    border-radius: 50%;
+    animation: float 15s ease-in-out infinite;
+  }
+}
+
+/* Ripple effect animation */
+@keyframes ripple-effect {
+  to {
+    transform: scale(4);
+    opacity: 0;
+  }
+}
+
+/* Strange cursor trail - Desktop only */
+@media (min-width: 769px) {
+  .cursor-trail {
+    position: fixed;
+    width: 4px;
+    height: 4px;
+    background: rgba(139, 92, 246, 0.4);
+    border-radius: 50%;
+    pointer-events: none;
+    z-index: 9998;
+    animation: fade-out 1s ease-out forwards;
+  }
+
+  @keyframes fade-out {
+    to {
+      opacity: 0;
+      transform: scale(0);
+    }
+  }
+}
+
+/* Distorted text on hover - Desktop only */
+@media (min-width: 769px) {
+  a:hover, button:hover {
+    text-shadow: 0 0 8px rgba(139, 92, 246, 0.5);
+  }
+}
+
+/* Eerie loading state */
+.loading-eerie::after {
+  content: '.';
+  animation: dots 1.5s steps(4, end) infinite;
+}
+
+@keyframes dots {
+  0%, 20% { content: '.'; }
+  40% { content: '..'; }
+  60%, 100% { content: '...'; }
+}
