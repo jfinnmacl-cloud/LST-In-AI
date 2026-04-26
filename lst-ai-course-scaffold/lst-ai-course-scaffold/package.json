@@ -1,0 +1,20 @@
+{
+  "name": "lst-ai-course-scaffold",
+  "version": "1.0.0",
+  "description": "Local Systems Theory in AI course landing page, placement questionnaire, and enrollment scaffold.",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "start": "python3 -m http.server 4173 --directory src",
+    "serve": "python3 -m http.server 4173 --directory src",
+    "check": "node --check src/js/course-data.js && node --check src/js/app.js"
+  },
+  "keywords": [
+    "local-systems-theory",
+    "ai",
+    "course",
+    "questionnaire",
+    "enrollment"
+  ],
+  "license": "UNLICENSED"
+}

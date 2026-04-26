@@ -1,0 +1,160 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Local Systems Theory in AI</title>
+    <meta
+      name="description"
+      content="A 33-week course scaffold for Local Systems Theory in AI, with tracks, curriculum, placement questionnaire, and enrollment form."
+    />
+    <link rel="stylesheet" href="./css/styles.css" />
+  </head>
+  <body>
+    <header class="site-header">
+      <a class="brand" href="#top" aria-label="Local Systems Theory in AI home">
+        <span class="brand-mark">LST</span>
+        <span>AI</span>
+      </a>
+      <nav aria-label="Primary navigation">
+        <button data-scroll="#course">Course</button>
+        <button data-scroll="#curriculum">Curriculum</button>
+        <button data-scroll="#assessment">Assessment</button>
+      </nav>
+    </header>
+
+    <main id="top">
+      <section class="hero section-pad">
+        <div class="hero-copy">
+          <p class="eyebrow">33-week intensive · Core / Intermediate / Advanced</p>
+          <h1>Local Systems Theory in AI</h1>
+          <p class="lede">
+            A year-long course on building AI systems that survive contact with human-scale reality.
+          </p>
+          <p>
+            This is not prompt trick school. This is systems training for human-AI loops: prompts,
+            models, memory, tools, feedback, governance, constraints, failure, and repair.
+          </p>
+          <div class="button-row">
+            <button class="primary" data-scroll="#assessment">Take the 20-question placement assessment</button>
+            <button class="secondary" data-scroll="#curriculum">Read the course structure</button>
+          </div>
+        </div>
+        <aside class="hero-panel" aria-label="Course operating law">
+          <span class="eyebrow">Operating law</span>
+          <p class="law">Bring the AI loop closer → reveal the friction → govern the decision → repair the system.</p>
+          <hr />
+          <p>
+            AI becomes locally intelligent when its outputs remain close enough to verify, constrained enough
+            to stay honest, and governed enough to repair when wrong.
+          </p>
+        </aside>
+      </section>
+
+      <section class="section-pad section-dark" id="course">
+        <div class="section-heading">
+          <p class="eyebrow">Course thesis</p>
+          <h2>AI is a node inside a local system.</h2>
+          <p>
+            The course asks what happens when AI enters real loops of attention, work, judgment, evidence,
+            trust, consequence, and repair.
+          </p>
+        </div>
+
+        <div class="formula-card">
+          <code>LST-AI(A) = {H, M, Cx, L, F, G, C, T, E, R}</code>
+          <p>
+            Human node, model node, context, local loop, friction, governance, constraints, time,
+            externality, and repair.
+          </p>
+        </div>
+
+        <div class="grid three" id="trackGrid" aria-label="Course tracks"></div>
+      </section>
+
+      <section class="section-pad" id="curriculum">
+        <div class="section-heading">
+          <p class="eyebrow">Year structure</p>
+          <h2>Same spine. Different technical depth.</h2>
+          <p>
+            Students move from local AI mapping to compression, friction diagnosis, proximity restoration,
+            governance, material constraint testing, temporal design, anti-scale, and final decompression.
+          </p>
+        </div>
+
+        <div class="grid four" id="phaseGrid" aria-label="Course phases"></div>
+
+        <div class="module-shell">
+          <h3>Modules and lectures</h3>
+          <div id="moduleList"></div>
+        </div>
+      </section>
+
+      <section class="section-pad section-dark split-section" id="midterm">
+        <div>
+          <p class="eyebrow">Mid-year exam</p>
+          <h2>Controlled AI System Collapse</h2>
+          <p>
+            The midterm stress-tests one mapped human-AI system using missing context, false output,
+            disagreement, latency, privacy concern, or governance pressure.
+          </p>
+        </div>
+        <div class="classification-grid">
+          <article><strong>Rigid</strong><span>rejects or obeys AI without process</span></article>
+          <article><strong>Brittle</strong><span>looks polished but collapses under contradiction</span></article>
+          <article><strong>Adaptive</strong><span>detects failure, routes uncertainty, revises</span></article>
+          <article><strong>Regenerative</strong><span>turns failure into better governance and repair</span></article>
+        </div>
+      </section>
+
+      <section class="section-pad" id="assessment">
+        <div class="section-heading">
+          <p class="eyebrow">Placement assessment</p>
+          <h2>Answer all 20 questions to reveal the enrollment form.</h2>
+          <p>
+            This assessment places applicants into Core, Intermediate, or Advanced. It measures current
+            orientation toward AI systems, not intelligence or worth.
+          </p>
+        </div>
+
+        <div class="progress-card" aria-live="polite">
+          <div class="progress-copy">
+            <strong><span id="answeredCount">0</span>/<span id="totalCount">20</span> answered</strong>
+            <span>Applicant form unlocks at 20/20.</span>
+          </div>
+          <div class="progress-bar" aria-hidden="true"><span id="progressFill"></span></div>
+        </div>
+
+        <form id="questionList" class="question-list"></form>
+
+        <div class="button-row sticky-actions">
+          <button class="primary" id="scoreAssessment" type="button" disabled>Score assessment</button>
+          <button class="secondary" id="resetAssessment" type="button">Reset</button>
+        </div>
+
+        <section id="resultPanel" hidden></section>
+      </section>
+
+      <section class="section-pad section-dark" id="applicationSection" hidden>
+        <div class="section-heading">
+          <p class="eyebrow">Enrollment applicant form</p>
+          <h2>Application unlocked.</h2>
+          <p>
+            Your score and track placement are attached automatically. Submitted applications are saved
+            locally in this browser for export.
+          </p>
+        </div>
+        <form id="applicantForm" class="applicant-form"></form>
+        <p id="applicationConfirmation" class="confirmation" hidden></p>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <p>
+        Local Systems Theory in AI · Scaffold v1 · Static HTML/CSS/JS
+      </p>
+    </footer>
+
+    <script type="module" src="./js/app.js"></script>
+  </body>
+</html>
